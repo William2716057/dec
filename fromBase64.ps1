@@ -6,7 +6,7 @@ param(
 
 # PowerShell -EncodedCommand uses UTF-16LE (Unicode)
 $bytes = [System.Convert]::FromBase64String($Base64)
-$text  = [System.Text.Encoding]::Unicode.GetString($bytes)
-
+#$text  = [System.Text.Encoding]::Unicode.GetString($bytes)
+$text = [System.Text.Encoding]::UTF8.GetString($bytes)
 # Output the decoded text
 Write-Output $text
